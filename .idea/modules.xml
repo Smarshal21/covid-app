@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HealthWatcher-master.iml" filepath="$PROJECT_DIR$/.idea/modules/HealthWatcher-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HealthWatcher-master.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/covid-app.iml" filepath="$PROJECT_DIR$/.idea/modules/covid-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/covid-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/covid-app.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/covid-app.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/covid-app.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/covid-app.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/covid-app.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/covid-app.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/covid-app.app.unitTest.iml" />
     </modules>
   </component>
 </project>

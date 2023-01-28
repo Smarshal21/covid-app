@@ -9,10 +9,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 
 public class BloodPressureResult extends AppCompatActivity {
 
@@ -36,7 +41,25 @@ public class BloodPressureResult extends AppCompatActivity {
             DP = bundle.getInt("DP");
             user = bundle.getString("Usr");
             TBP.setText(SP + " / " + DP);
+            Retrofit retrofit = RetrofitClient.getInstance("https://jsonplaceholder.typicode.com/");
+            Interface api = retrofit.create(Interface.class);
+
+            Data data = new Data(TBP);
+            api.postData(data).enqueue(new Callback<Response>() {
+                @Override
+                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                    Toast.makeText(BloodPressureResult.this, "Data Added", Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onFailure(Call<Response> call, Throwable t) {
+                    Toast.makeText(BloodPressureResult.this, "Data Not Added", Toast.LENGTH_LONG).show();
+                }
+            });
         }
+
+
+
 
         SBP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,4 +87,5 @@ public class BloodPressureResult extends AppCompatActivity {
         finish();
         super.onBackPressed();
     }
+
 }

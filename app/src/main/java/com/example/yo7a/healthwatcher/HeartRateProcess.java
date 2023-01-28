@@ -1,5 +1,6 @@
 package com.example.yo7a.healthwatcher;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -56,6 +57,7 @@ public class HeartRateProcess extends Activity {
     public ArrayList<Double> RedAvgList = new ArrayList<Double>();
     public int counter = 0;
 
+    @SuppressLint("InvalidWakeLockTag")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
