@@ -3,6 +3,8 @@ package com.example.yo7a.healthwatcher;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 
 
 public class HeartRateResult extends AppCompatActivity {
@@ -30,6 +36,7 @@ public class HeartRateResult extends AppCompatActivity {
         Date = df.format(today);
         TextView RHR = this.findViewById(R.id.HRR);
         ImageButton SHR = this.findViewById(R.id.SendHR);
+        Button submit = this.findViewById(R.id.submit);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -38,7 +45,26 @@ public class HeartRateResult extends AppCompatActivity {
             Log.d("DEBUG_TAG", "ccccc" + user);
             RHR.setText(String.valueOf(HR));
         }
+submit.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Retrofit retrofit = RetrofitClient.getInstance("https://jsonplaceholder.typicode.com/");
+        Interface api = retrofit.create(Interface.class);
 
+        Data data = new Data(RHR);
+        api.postData(data).enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                Toast.makeText(HeartRateResult.this, "Data Added", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+                Toast.makeText(HeartRateResult.this, "Data Not Added", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+});
         SHR.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");

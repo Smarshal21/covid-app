@@ -2,6 +2,8 @@ package com.example.yo7a.healthwatcher;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +14,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
 
 public class O2Result extends AppCompatActivity {
 
@@ -28,6 +34,7 @@ public class O2Result extends AppCompatActivity {
         Date = df.format(today);
         TextView RO2 = this.findViewById(R.id.O2R);
         ImageButton SO2 = this.findViewById(R.id.SendO2);
+        Button submit = this.findViewById(R.id.submit);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -35,7 +42,26 @@ public class O2Result extends AppCompatActivity {
             user = bundle.getString("Usr");
             RO2.setText(String.valueOf(O2));
         }
+ submit.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Retrofit retrofit = RetrofitClient.getInstance("https://jsonplaceholder.typicode.com/");
+        Interface api = retrofit.create(Interface.class);
 
+        Data data = new Data(RO2);
+        api.postData(data).enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                Toast.makeText(O2Result.this, "Data Added", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+                Toast.makeText(O2Result.this, "Data Not Added", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+});
         SO2.setOnClickListener(v -> {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
