@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_respiration_result"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="64dp"
+    android:paddingTop="16dp"
+    android:paddingRight="64dp"
+    android:paddingBottom="16dp"
+    android:weightSum="1"
+    tools:context="com.example.yo7a.healthwatcher.RespirationResult">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/bg"
+        android:scaleType="fitCenter"
+        app:srcCompat="@mipmap/rrl" />
+
+    <TextView
+        android:id="@+id/RRR"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/mainLight"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/bg"
+        android:layout_marginBottom="140dp"
+        app:srcCompat="@mipmap/rrr" />
+
+    <ImageButton
+        android:id="@+id/SendRR"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/bg"
+        android:scaleType="fitCenter"
+        app:srcCompat="@mipmap/send" />
+
+</LinearLayout>

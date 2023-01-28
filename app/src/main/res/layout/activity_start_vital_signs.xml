@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img2"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="64dp"
+    android:paddingTop="16dp"
+    android:paddingRight="64dp"
+    android:paddingBottom="16dp"
+    tools:context="com.example.yo7a.healthwatcher.StartVitalSigns"
+    android:layout_centerInParent="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="156dp"
+        app:srcCompat="@mipmap/rsz_download" />
+
+    <Space
+        android:layout_below="@id/imageView3"
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_weight="0.14" />
+
+    <TextView
+        android:layout_below="@id/space"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.87"
+        android:text="- Lightly place your index \n  finger on the rear camera.\n\n- Make sure the camera is fully \n   covered. \n\n- Measure in a shaded \n  environment. \n\n- Don't move your finger until\n   the measurement is \n   complete. \n\n- Finally place your finger then \n   press start. "
+        android:textColor="@color/mainLight"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_below="@id/textView"
+        android:id="@+id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="0.17" />
+
+    <Button
+        android:layout_below="@id/space2"
+        android:id="@+id/StartVS"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="5dp"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/mainLight"
+        android:background="@drawable/buttonbg"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
