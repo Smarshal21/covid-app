@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivitySecond">
+    <CheckBox
+        android:id="@+id/cough"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="Cough"
+        />
+
+    <CheckBox
+        android:id="@+id/cold"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cough"
+        android:layout_centerInParent="true"
+        android:text="Cold" />
+
+    <CheckBox
+        android:id="@+id/headache"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cold"
+        android:layout_centerInParent="true"
+        android:text="Headache" />
+    <CheckBox
+        android:id="@+id/bodypains"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/headache"
+        android:text="Bodypains" />
+
+    <CheckBox
+        android:id="@+id/vomiting"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bodypains"
+        android:layout_centerInParent="true"
+        android:text="Vomiting" />
+    <CheckBox
+        android:id="@+id/smell"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vomiting"
+        android:layout_centerInParent="true"
+        android:text="Smell" />
+
+
+    <Button
+        android:id="@+id/submit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smell"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="Submit"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/next2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit1"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="Next"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

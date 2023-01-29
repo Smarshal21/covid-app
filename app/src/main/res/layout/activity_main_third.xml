@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityThird">
+    <CheckBox
+        android:id="@+id/diabetes"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="Diabetes"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/cholestrol"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/diabetes"
+        android:layout_centerInParent="true"
+        android:text="Cholestrol" />
+
+    <CheckBox
+        android:id="@+id/x"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cholestrol"
+        android:layout_centerInParent="true"
+        android:text="X" />
+    <CheckBox
+        android:id="@+id/y"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/x"
+        android:text="Y" />
+
+    <CheckBox
+        android:id="@+id/z"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/y"
+        android:layout_centerInParent="true"
+        android:text="Z" />
+    <Button
+        android:id="@+id/submit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/z"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="Submit"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>
